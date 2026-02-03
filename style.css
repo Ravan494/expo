@@ -46,7 +46,7 @@ a{
 
 /* hero section */
 
-.hero
+.home-hero
 {
    height: 120vh;
     width: 100%;
@@ -58,12 +58,12 @@ a{
     align-items: center;
     text-align: center;
 }
-.hero h1
+.home-hero h1
 {
     color: #756f4f;
     font-size: 6rem;
 }
-.hero p
+.home-hero p
 {
     color: #756f4f;
     font-size: 2rem;
