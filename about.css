@@ -1,0 +1,121 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box!important;
+}
+img
+{
+    width: 100%;
+}
+.about-hero
+{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    background-image: url(gallery/about-page/about.png);
+    background-size: cover;
+    background-position-y: -50px;
+    justify-content: center;
+    padding-top: 5rem;
+    align-items: start;
+    text-align: center;
+}
+.about-hero h1,.about-hero p
+{
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.about-hero-content
+{
+    margin-top: -10rem;
+    background: linear-gradient(to right, #e3e0cf,#f1f5f0);
+}
+.about-hero-content img
+{
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+.about-hero-content .cards img
+{
+    width: 80px;
+    height: auto;
+    display: block;
+}
+
+.about-hero-content p
+{
+    font-size: 18px;
+}
+.box {
+    width: 30%;
+    background: white;
+    margin: 20px;
+    border: 1px solid;
+    border-radius: 20px;
+    padding: 10px !important;
+}
+.about-hero-content .box p {
+    font-size: 15px;
+}
+
+
+
+section.world-way {
+    background: #756f4f;
+    overflow: hidden;
+    padding-bottom: 7rem;
+}
+section.world-way .plan-Journey
+{
+    background-color: #f1f5f0;
+        background: linear-gradient(to right, #e3e0cf, #f1f5f0);
+}
+.world-way .content .text-wrap p {
+    font-size: 18px;
+}
+
+.list
+{
+    width: 80%;
+    padding: 20px;
+    padding-bottom: 0;
+    text-transform: uppercase;
+    background-color: #d1ceba;
+}
+.list li
+{
+    margin-bottom: 10px;
+    font-size: 32px;
+    color: #3b3500;
+}
+.about-upper-image
+{
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 100%;
+    z-index: 99;
+}
+
+.philosophy-img
+{
+    margin-top: -5rem;
+    position: relative;
+    z-index: 99;
+}
+
+.philosophy h2.heading {
+    font-size: 11rem;
+    margin: 0;
+    width: 100%;
+    text-align: center;
+    padding: 0;
+    color: #cccbbe;
+    font-stretch: semi-condensed;
+    margin-top: -3rem;
+    opacity: 0.7;
+}
