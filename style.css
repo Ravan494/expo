@@ -58,7 +58,8 @@ a {
   position: absolute;
   top: calc(100% + 8px);
   left: 0;
-  background: #3a3400;
+  background: white;
+  color: #000;
   border-radius: 8px;
   min-width: 180px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
@@ -70,7 +71,7 @@ a {
 
 .dropdown-menu li a {
   display: block;
-  color: white;
+  color: black;
   padding: 8px 12px;
   white-space: nowrap;
 }
@@ -88,12 +89,12 @@ a {
   position: absolute;
   top: 0;
   left: 100%;
-  background: #3a3400;
+  background: white;
   border-radius: 8px;
   min-width: 180px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
   list-style: none;
-  padding: 8px 0;
+  padding: 10px;
   display: none;
   z-index: 1101;
 }
@@ -104,7 +105,7 @@ a {
 
 .dropdown-submenu li a {
   display: block;
-  color: white;
+  color: black;
   padding: 8px 12px;
   white-space: nowrap;
 }
@@ -139,7 +140,7 @@ a {
 .dropdown-toggle[aria-expanded="true"]+.dropdown-menu {
   display: block !important;
   position: absolute;
-  background: #3a3400;
+  background: white;
   box-shadow: none;
   padding-left: 0;
 }
@@ -279,7 +280,7 @@ input#date2:focus-visible {
   display: flex;
   width: 100%;
   justify-content: space-evenly;
-  align-items: center;
+  align-items: stretch;
   gap: 30px;
   flex-wrap: wrap;
   padding: 0 5rem;
@@ -299,6 +300,29 @@ input#date2:focus-visible {
   text-align: center;
   cursor: pointer;
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+}
+
+.custom-card {
+  width: 100%;
+  max-width: 240px;
+  /* sm:w-60 */
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  background-color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+/* Hover effect (optional but recommended 🔥) */
+.custom-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 .card-heading {
@@ -351,18 +375,20 @@ input#date2:focus-visible {
 .think-text {
   padding: 0 20px;
   width: 30%;
+  text-align: center;
   color: #756f4f;
+  overflow: hidden;
 }
 
 .think-text h2 {
-  font-size: 8rem;
+  font-size: 7rem;
   line-height: 8rem;
   text-wrap: wrap;
 }
 
 .think-text p {
   font-size: 25px;
-  margin-bottom: -50px;
+  margin-bottom: -10px;
 }
 
 /* paragraph part  */
@@ -427,6 +453,7 @@ input#date2:focus-visible {
   height: 80vh;
   width: 100%;
   display: flex;
+  color: rgb(117, 111, 79);
   align-items: center;
   justify-content: center;
   flex-direction: column;
@@ -435,7 +462,7 @@ input#date2:focus-visible {
 
 .plan-Journey h2 {
   text-align: center;
-  font-size: 7rem;
+  font-size: 4.5rem;
   color: #756f4f;
 }
 
@@ -474,27 +501,27 @@ img.upper-img.position-absolute {
 }
 
 .plan-journey-card .card-wraper {
-  display: flex;
-  justify-content: center;
-
-  width: 100%;
-  padding: 0 5rem;
-  gap: 30px;
-  flex: 1fr 1fr 1fr;
-  flex-wrap: wrap;
+     display: grid;
+    justify-content: center;
+    width: 100%;
+    padding: 0 5rem;
+    gap: 30px;
+    grid-template-columns: auto auto auto;
 }
 
 .plan-journey-card .card {
-  background-color: white;
-  width: 400px;
-  padding: 20px;
-  border-radius: 15px;
-  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
-  text-align: start;
-  cursor: pointer;
-  display: flex;
-  align-items: baseline;
-  border: 1px solid white;
+     background-color: white;
+    width: 400px;
+    height: 300px;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+    text-align: start;
+    justify-content: start;
+    cursor: pointer;
+    display: flex;
+    align-items: baseline;
+    border: 1px solid white;
 }
 
 .plan-journey-card .card .card-heading {
@@ -548,14 +575,16 @@ img.upper-img.position-absolute {
 }
 
 .student-program-cards {
-  height: auto;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 50px 0;
-  /* gap: 30px; */
-  flex-wrap: wrap;
+        height: auto;
+    width: 100%;
+    display: grid;
+    justify-content: center;
+    align-items: stretch;
+    padding: 50px 0;
+    gap: 30px;
+    flex-wrap: wrap;
+    grid-template-columns: auto auto auto auto;
+    align-content: stretch;
 }
 
 .student-program-cards .card .card-heading {
@@ -579,10 +608,11 @@ img.upper-img.position-absolute {
   flex-direction: column;
   align-items: center;
   margin-right: -1rem;
+  transition: all 0.3s ease-in-out;
   background: linear-gradient(to bottom right, #ccc6a9, white);
 }
 
-.student-program-cards .card:nth-child(2) {
+/* .student-program-cards .card:nth-child(2) {
   transform: scale(1.05);
   transition: all 0.3s ease-in-out;
 }
@@ -591,19 +621,19 @@ img.upper-img.position-absolute {
   transform: scale(1.15);
   transition: all 0.3s ease-in-out;
   z-index: 11;
-}
+} */
 
 .student-program-cards .card:hover {
   transform: scale(1.15);
-  transition: all 0.3s ease-in-out;
+  
   z-index: 15;
 }
 
-.student-program-cards .card:not(:hover) {
+/* .student-program-cards .card:not(:hover) {
   transform: scale(1);
   transition: all 0.3s ease-in-out;
   z-index: 1;
-}
+} */
 
 /* about section */
 .about-section {
@@ -882,14 +912,66 @@ p.about-para {
   font-size: 14px;
 }
 
+.social-icons {
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+
+.social-icons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.8);
+  transition: all 0.3s ease;
+}
+
+.social-icons a svg {
+  width: 24px;
+  height: 24px;
+}
+
+.social-icons a:hover {
+  color: #fff;
+  transform: scale(1.1);
+}
+
 @media (max-width: 1280px) {
+  .tag-cards {
+    gap: 20px;
+    padding: 0 1rem;
+    justify-content: center;
+  }
+
   .plan-journey-card .card {
     width: 350px;
     height: 200px;
   }
+  .think-text h2 {
+    font-size: 5rem;
+    line-height: 5rem;
+    text-wrap: wrap;
+}
+.student-program-cards
+{
+    grid-template-columns: auto auto;
+    gap: 50px;
+}
+.student-program-cards .card
+{
+  width: auto;
+
+}
 }
 
 @media (max-width: 900px) {
+  .dropdown-parent {
+        position: relative;
+        display: none;
+    }
   .top-border {
     top: -5rem;
   }
@@ -900,7 +982,7 @@ p.about-para {
 
   .plan-journey-card .card {
     width: 300px;
-    height: 250px;
+    height: auto;
   }
 
   .think-part {
@@ -921,10 +1003,29 @@ p.about-para {
 
   .think-text p {
     font-size: 25px;
-    margin-bottom: -50px;
-    margin-left: -15rem;
+    margin-bottom: 0px;
+    
   }
 
+  .para-part
+  {
+   
+    padding-top: 0;
+    margin-top: 0;
+  }
+  .plan-journey-card .card-wraper {
+    display: grid;
+    justify-content: center;
+    width: 100%;
+    padding: 0 5rem;
+    gap: 30px;
+    grid-template-columns: auto auto;
+}
+  .plan-Journey .heading
+  {
+    height: auto;
+    padding: 2rem 1rem;
+  }
   .site-footer .footer-top-wrap {
     flex-direction: column;
     align-items: center;
@@ -1039,11 +1140,19 @@ p.about-para {
   .dropdown-toggle[aria-expanded="true"]+.dropdown-menu {
     display: block;
     position: relative;
-    background: #3a3400;
+    background: white;
+    color: #000;
     box-shadow: none;
     padding-left: 0;
   }
-
+  .plan-journey-card .card-wraper {
+    display: grid;
+    justify-content: center;
+    width: 100%;
+    padding: 0 5rem;
+    gap: 30px;
+    grid-template-columns: auto;
+}
   .nav-links {
     margin: 0 auto;
   }
@@ -1097,7 +1206,7 @@ p.about-para {
     flex-wrap: wrap;
     padding: 0 1rem;
     gap: 20px;
-    align-items: center;
+    align-items: stretch;
   }
 
   .tag-cards .card {
@@ -1183,16 +1292,23 @@ p.about-para {
 
   .faq {
     width: 95%;
+    height: auto;
   }
 
   .faq-question {
     font-size: 16px;
     padding: 14px 16px;
   }
+  .student-program-cards
+{
+    grid-template-columns: auto;
+}
 }
 
 @media screen and (max-width: 580px) {
-
+  button.dropdown-toggle {
+    width: 100%;
+}
   .nav-links {
     margin: 0 auto;
   }
@@ -1261,7 +1377,7 @@ p.about-para {
 
   .think-text p {
 
-    margin-bottom: -40px;
+    margin-bottom: 0px;
 
   }
 
@@ -1343,10 +1459,11 @@ p.about-para {
 
   .student-program-cards .card {
     width: 100%;
-    max-width: max-content;
+    max-width: fit-content;
     margin: 10px;
+    box-sizing: border-box;
     padding: 10px;
-  }
+}
 
   .student-program-cards .card .card-p {
     line-height: 14px;

@@ -121,10 +121,24 @@
 }
 .destination-card
 {
-    width: 200px;
+    width: 350px;
+    border-radius: 18px;
+    padding: 30px;
     background-color: white;
     box-shadow: 0px 0px 20px rgba(0,0,0,0.2);
     
+}
+.destination-card img
+{
+    border-radius: 18px 18px 0 0;
+}
+.destination-card p{
+    margin: 20px 0;
+    color: #756f4f;
+}
+.destination-card button{
+    border-radius: 8px;
+
 }
 .destination-card:nth-child(1) button
 {

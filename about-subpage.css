@@ -40,6 +40,10 @@
     margin: 50px auto;
 }
 
+.health .cross {
+    gap: 50px;
+}
+
 .cross:nth-child(even) {
     flex-direction: row-reverse;
 }
@@ -68,6 +72,21 @@
     width: 50%;
 }
 
+.cross .section-title {
+    font-family: 'Cinzel', serif;
+    font-size: 17px;
+    letter-spacing: 0.18em;
+    color: #3b3500;
+    font-weight: 700;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+}
+.cross .section-text {
+    font-family: 'Crimson Text', serif;
+    font-size: clamp(15px, 1.5vw, 17px);
+    line-height: 1.75;
+    color: #5f5863;
+}
 .sub-section {
     width: 70%;
     margin: auto;
