@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Team - Experiential Pathways</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="team.css">
+</head>
+<body>
+
+    <div id="navbar-placeholder"></div>
+
+    <!-- ===== Hero Section ===== -->
+    <section class="team-hero">
+        <div class="container team-hero-content">
+            <h1>Meet Our Team</h1>
+        </div>
+    </section>
+
+    <!-- ===== Team Section ===== -->
+    <section class="team-section">
+        <div class="container">
+            <div class="team-section-header">
+                <h2>The People Behind the Pathways</h2>
+                <p>Our dedicated team of program leaders, travel coordinators, and educators is passionate about creating transformational experiences. With decades of combined experience in global travel and education, we are here to support every step of your journey.</p>
+            </div>
+
+            <div class="team-grid">
+                
+                <!-- Team Member 1 -->
+                <div class="team-member">
+                    <div class="team-img-wrapper">
+                        <img src="gallery/team/1.png" alt="Sudarshan">
+                    </div>
+                    <div class="team-info">
+                        <h3 class="team-name">Sudarshan</h3>
+                        <p class="team-title">Founder & Expedition Leader</p>
+                        <div class="team-bio">
+                            <span class="bio-content">Sudarshan completed his Post Grad in Hospitality and Tourism management. He worked in a production house as a location manager and an inbound luxury travel operator.</span>
+                            <span class="bio-collapse"> With a degree from JNV university in Jodhpur, his passion for outdoor education inspires him to provide innovative programs in India and Nepal. He loves cricket and country music.</span>
+                            <br>
+                            <button class="read-more-btn">Read More</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Team Member 2 -->
+                <div class="team-member">
+                    <div class="team-img-wrapper">
+                        <img src="gallery/team/2.png" alt="Sarah Jenkins">
+                    </div>
+                    <div class="team-info">
+                        <h3 class="team-name">Sarah Jenkins</h3>
+                        <p class="team-title">Director of Global Programs</p>
+                        <div class="team-bio">
+                            <span class="bio-content">Sarah brings over 15 years of experience in educational travel and risk management. She oversees the development of our immersive global programs with a careful eye for detail.</span>
+                            <span class="bio-collapse"> Before joining Experiential Pathways, she spent a decade leading student groups across Southeast Asia and Bhutan. She believes travel is the ultimate classroom and is dedicated to fostering global citizenship among youth.</span>
+                            <br>
+                            <button class="read-more-btn">Read More</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Team Member 3 -->
+                <div class="team-member">
+                    <div class="team-img-wrapper">
+                        <img src="gallery/team/3.png" alt="Rajeev Kumar">
+                    </div>
+                    <div class="team-info">
+                        <h3 class="team-name">Rajeev Kumar</h3>
+                        <p class="team-title">Senior Field Guide</p>
+                        <div class="team-bio">
+                            <span class="bio-content">An avid mountaineer and certified wilderness first responder, Rajeev has been exploring the Himalayas since he was a teenager. He leads our high-altitude programs.</span>
+                            <span class="bio-collapse"> Rajeev is known for his incredible storytelling around the campfire and his deep knowledge of local flora and fauna. He ensures every student group stays safe while stepping entirely out of their comfort zone.</span>
+                            <br>
+                            <button class="read-more-btn">Read More</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <div id="faq-placeholder"></div>
+    <div id="footer-placeholder"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const buttons = document.querySelectorAll('.read-more-btn');
+            
+            buttons.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const bioContainer = e.target.parentElement;
+                    const collapseContent = bioContainer.querySelector('.bio-collapse');
+                    
+                    if (collapseContent.classList.contains('expanded')) {
+                        collapseContent.classList.remove('expanded');
+                        e.target.textContent = 'Read More';
+                    } else {
+                        collapseContent.classList.add('expanded');
+                        e.target.textContent = 'Read Less';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

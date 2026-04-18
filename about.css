@@ -50,9 +50,9 @@ img
     font-size: 18px;
 }
 .box {
-    width: 30%;
+    /* width: 30%; */
     background: white;
-    margin: 20px;
+    /* margin: 20px; */
     border: 1px solid;
     border-radius: 20px;
     padding: 10px !important;
@@ -109,7 +109,7 @@ section.world-way .plan-Journey
 }
 
 .philosophy h2.heading {
-    font-size: 11rem;
+    font-size: 11vw;
     margin: 0;
     width: 100%;
     text-align: center;
@@ -118,4 +118,50 @@ section.world-way .plan-Journey
     font-stretch: semi-condensed;
     margin-top: -3rem;
     opacity: 0.7;
+}
+
+
+@media (max-width:900px) {
+    .philosophy h2.heading 
+    {
+        margin-top: -1.5rem;
+    }
+}
+@media (max-width:786px) {
+    .list li
+    {
+        font-size: 18px;
+    }
+    .philosophy h2.heading 
+    {
+        margin-top: -1rem;
+    }
+
+}
+
+@media (max-width:580px) {
+    .about-hero {
+                height: 71vh;
+        width: 100%;
+        display: flex;
+        background-image: url(gallery/about-page/about1.png);
+        background-size: cover;
+        justify-content: center;
+        padding-top: 10rem;
+        align-items: start;
+        text-align: center;
+        background-position: bottom;
+    }
+.philosophy h2.heading {
+        margin-top: -0.5rem;
+    }
+}
+@media (max-width:480px) {
+    .list
+    {
+        width: 100%;
+    }
+    /* .list li {
+        font-size: 12px;
+    } */
 }

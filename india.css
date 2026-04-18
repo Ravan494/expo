@@ -1,4 +1,248 @@
 .hero .banner-img
 {
-    width: 100%;
+   width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 10;
 }
+.hero
+{
+    height: 80vh;
+    width: 100%;
+    display: flex;
+    /* background-image: url(gallery/india/1.png); */
+    background-size: cover;
+    justify-content: center;
+    /* padding-top: 5rem; */
+    align-items: start;
+    text-align: center;
+}
+.hero .container.hero-content {
+    position: relative;
+    z-index: 11;
+    color: #5e5722;
+    margin-top: 7rem;
+}
+.hero-title
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #5e5722;
+    font-size: 4rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+
+.destination-name
+{
+    font-size: 20vw;
+    color: #5e5722;
+    margin-bottom: -5rem;
+}
+
+.destination p
+{
+    color: #5e5722;
+    
+}
+.info {
+       margin: 2rem 5rem;
+    background-image: url(gallery/india/38.png);
+    padding: 3rem 5rem 5rem;
+    background-position: center;
+    border-radius: 28px;
+    background-size: cover;
+}
+.destination img.position-absolute
+{
+    width: 100%;
+    bottom: 0;
+    left: 0;
+}
+.itinerarys
+{
+    background: #756f4f;
+    color: #756f4f;
+    margin-bottom: -7rem;
+}
+.itinerary-card
+{
+    width: 300px;
+    padding: 5rem 1rem 1rem 1rem;
+    border-radius: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: white;
+}
+.itinerary-card img
+{   
+    width: 130px;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+}
+.itinerary-card button
+{
+    background:linear-gradient(#cfcab0,#f2f5f3);
+    border-radius: 28px;
+    padding: 10px 20px;
+    border: none;
+}
+
+
+.about-destination {
+    text-align: center;
+     color: #756f4f;
+     background-image: url(gallery/india/24.png);
+}
+.about-destination h2 {
+    font-size: 9vw;
+    color: #c4c2b5;
+}
+
+
+.gallery img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.destination-cards
+{
+        display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.destination-card
+{
+    width: 200px;
+    background-color: white;
+    box-shadow: 0px 0px 20px rgba(0,0,0,0.2);
+    
+}
+.destination-card:nth-child(1) button
+{
+    background-color: #1c415c;
+    color: white;
+}
+.destination-card:nth-child(2) button
+{
+    background-color: #b55802;
+    color: white;
+}
+.destination-card:nth-child(3) button
+{
+    background-color: #57481d;
+    color: white;
+}
+.destination-card button
+{
+    border: none;
+    width: 100%;
+    padding: 10px;
+}
+
+
+
+
+
+@media (max-width: 1420px) {
+    .banner-img
+    {
+        display: none;
+    }
+.hero
+{
+    height: 60vh;
+    background: url(gallery/india/1.png);
+        background-size: cover;
+}
+.destination-name {
+   
+    margin-bottom: -3rem;
+}
+}
+
+
+@media (max-width: 900px) {
+.itinerarys
+{
+        margin-bottom: -4rem;
+}
+}
+@media (max-width: 786px) {
+.destination-name {
+    
+    margin-bottom: -2rem;
+}
+    .info {
+        margin: 20px 40px -20px;
+        padding: 20px 20px 0 !important;
+    }
+    .itinerarys
+{
+        margin-bottom: 0;
+        padding-bottom: 1rem
+}
+}
+@media (max-width: 580px) {
+
+    .info .row .col-4 h3
+    {
+        font-size: 12px;
+    }
+    .info .row .col-4 img
+    {
+        width: 30px;
+    }
+    
+    .itinerary-card
+    {
+        width: 150px;
+        padding-top: 3rem;
+        margin-bottom: 50px;
+    }
+    .itinerary-card h2
+    {
+        font-size: 15px;
+    }
+    .itinerary-card p
+    {
+        font-size: 12px;
+    }
+    .itinerary-card img
+    {
+        width: 80px;
+    }
+    .itineraray-desc
+    {
+       display: none;
+        font-size: 12px;
+    line-height: 13px;
+    }
+    .about-destination p
+    {
+        font-size: 18px !important;
+        padding: 0 !important;
+        margin: 20px !important;    
+    }
+    .destination-cards
+    {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .destination-card
+    {
+        width: 300px;
+    }
+}
+@media (max-width: 480px) {
+
+}
+

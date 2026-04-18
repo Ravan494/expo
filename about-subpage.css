@@ -1,0 +1,172 @@
+.about-subpage {
+    background-image: url("gallery/india/24.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.about-subpage h1 {
+    font-size: 68px;
+    color: #5d5721;
+    text-align: center;
+    font-variant: small-caps;
+    letter-spacing: 0.05em;
+}
+
+.about-subpage h3 {
+    font-size: 40px;
+    color: #5d5721;
+    font-weight: 900;
+    text-align: center;
+    font-variant: small-caps;
+    letter-spacing: 0.05em;
+}
+
+.about-subpage p {
+    color: #5d5721;
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+}
+
+.cross-container {
+    width: 95%;
+}
+
+.cross {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 50px auto;
+}
+
+.cross:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.cross-content {
+    display: flex;
+    width: 55%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+}
+
+.cross h2 {
+    font-size: 30px;
+    color: rgb(59, 53, 0);
+    font-weight: 900;
+}
+
+.cross p {
+    font-size: 18px;
+    color: rgb(93, 87, 33);
+
+}
+
+.cross-img {
+    width: 50%;
+}
+
+.sub-section {
+    width: 70%;
+    margin: auto;
+    text-align: center;
+}
+
+#extensive {
+    background-image: url("gallery/india/24.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 50px 0;
+}
+
+li::marker {
+    color: #756f4f;
+    font-size: 20px;
+}
+
+.extensive {
+    width: 80%;
+    margin: auto;
+
+}
+
+.extensive h2 {
+    font-size: 48px;
+    color: #756f4f;
+    /* font-weight: 900; */
+}
+
+.extensive p {
+    font-size: 22px;
+    color: #756f4f;
+}
+
+@media (max-width: 900px) {
+    .cross-container {
+        width: 100%;
+    }
+
+    .about-subpage h1 {
+        font-size: 34px;
+        line-height: 2rem;
+    }
+
+    .about-subpage p {
+        font-size: 18px;
+        line-height: 1.5rem;
+    }
+}
+
+@media (max-width: 786px) {
+    .sub-section {
+        width: 100%;
+    }
+
+    .cross-container {
+        width: 100%;
+        padding: 0;
+    }
+
+    .cross {
+        flex-direction: column;
+
+    }
+
+    .cross h2 {
+        font-size: 20px;
+    }
+
+    .cross p {
+        font-size: 14px;
+    }
+
+    .cross-content {
+        width: 100%;
+    }
+
+    .cross-img {
+        width: 100%;
+    }
+
+    .cross:nth-child(even) {
+        flex-direction: column;
+    }
+
+}
+
+@media (max-width: 480px) {
+    .row.g-3.text-center .col-6 .p-2 {
+        font-size: 14px;
+    }
+
+    .cross-content {
+        width: 100%;
+    }
+
+    .cross-img {
+        width: 100%;
+    }
+}

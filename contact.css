@@ -1,0 +1,137 @@
+.banner-text.position-absolute {
+    top: 0;
+    width: 100%;
+    left: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(189, 185, 145, 0.8);
+}
+.banner-text h1{
+    color: #3b3500;
+    font-size: 8vw;
+} 
+.get-in-touch{
+    padding-top: 1rem;
+}
+.get-in-touch p
+{
+    font-size: 20px;
+}
+.contact-cards .last-img
+{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+.contact-cards
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding-bottom: 50px;
+}
+.contact-card
+{
+    width: 300px;
+    height: 200px;
+    background: linear-gradient(#7a7452,#ede3ab);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 25px 25px 0 0;
+}
+.contact-card img
+{
+    width: 50px;
+}
+.contact-form {
+    background-image: url(gallery/contact/24.png);
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+    /* padding: 2rem; */
+}
+.contact-form .last-img
+{
+    overflow: hidden;
+}
+.contact-form .last-img .upper{
+    position: relative;
+    z-index: 10;
+}
+.contact-form .last-img .position-absolute{
+    /* background-image: url(gallery/contact/18_1.png); */
+    width: 100%;
+    position: absolute;
+    bottom: -20%;
+    left: 0;
+}
+.map{
+    width: 100%;
+    height: 400px;
+    border-radius: 25px;
+    margin-bottom: 20px;
+    border: 2px solid #3b3500;
+    overflow: hidden;
+}
+.form
+{
+    padding: 2rem 4rem;
+}
+.contact-form .form input,.contact-form .form textarea
+{
+    background: transparent;
+    border: 2px solid #3b3500;
+}
+.contact-form .form button
+{
+    background: linear-gradient(to right,#fffbe6,white);
+    padding: 5px 10px;
+}
+
+
+
+@media (max-width:786px) {
+    .banner
+    {
+        height: 50vh;
+        background-image: url(gallery/contact/25.png);
+        background-size: cover;
+    }
+    .banner img
+    {
+        display: none;
+    }
+    .banner-text h1{
+        /* color: ; */
+        font-size: 10vw;
+    } 
+    .contact-form .last-img .position-absolute{
+    bottom: -10%;
+}
+
+}
+@media (max-width:580px) {
+    .contact-form .last-img .position-absolute{
+    bottom: -5%;
+    }
+    .contact-card
+    {
+       
+        text-align: center;
+        border-radius: 25px;
+        flex-wrap: wrap;
+    }
+    .contact-card p
+    {
+        font-size: 15px;
+    }
+}
+
+

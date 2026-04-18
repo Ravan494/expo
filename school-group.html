@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School & Group Trips - Experiential Pathways</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="school-group.css">
+</head>
+
+<body>
+
+    <div id="navbar-placeholder"></div>
+
+    <!-- ===== Hero Section ===== -->
+    <section class="school-hero">
+        <div class="container">
+            <div class="school-hero-content">
+                <h1 class="text-uppercase fw-bold school-main-heading">SCHOOL GROUP TRAVEL FOR EDUCATORS</h1>
+                <h1 class="school-main-heading">Customized, Hassle-Free Trips.</h1>
+                <p class="school-desc">
+                    Experiential Pathways designs customized, hassle-free school group travel programs that help
+                    educators expand learning beyond the classroom through immersive service and cultural experiences.
+                </p>
+                <div class="hero-actions">
+                    <a href="contact.html" class="btn-primary-custom text-uppercase">Schedule a Call</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Vision & Expertise Section ===== -->
+    <section class="vision-section">
+        <div class="container">
+            <!-- First Row -->
+            <div class="row g-5 align-items-center mb-5 pb-5">
+                <div class="col-lg-6 pe-lg-5">
+                    <h2 class="vision-heading">Your Vision for Educational Tours, Our Expertise in Student Travel</h2>
+                    <p class="vision-text">
+                        School group travel with Experiential Pathways takes education beyond the classroom to
+                        destinations across the world. We partner creatively with schools to help teachers support their
+                        educational trip visions.
+                    </p>
+                    <p class="vision-text">
+                        Our team of current and former educators has expertise customizing experiences that prioritize
+                        safety and align with your goals for educational tours.
+                    </p>
+                </div>
+                <div class="col-lg-6">
+                    <img src="gallery/home-page/22.png" class="vision-image" alt="Educational Tours in South Asia">
+                </div>
+            </div>
+
+            <!-- Second Row (Zig-Zag) -->
+            <div class="row g-5 align-items-center flex-row-reverse mb-5 pb-5">
+                <div class="col-lg-6 ps-lg-5">
+                    <p class="vision-text">
+                        Through custom school group travel, you can build the best trip to transform students into
+                        lifetime learners. You can plan the entire trip or leave it up to Experiential Pathways to build
+                        your perfect educational tour.
+                    </p>
+                    <p class="vision-text">
+                        We guide you through the process of traveling with students. We can pull the prep and details of
+                        student travel off of your plate while you can focus on your vision.
+                    </p>
+                    <p class="vision-text">
+                        We love working with educators who know what they want. From discovering local culture on a fun
+                        short trip to a deep dive into community service in Nepal. We are ready for your trip of a
+                        lifetime.
+                    </p>
+                </div>
+                <div class="col-lg-6">
+                    <img src="gallery/home-page/11.png" class="vision-image" alt="Students traveling and exploring">
+                </div>
+            </div>
+
+            <!-- Call to Action Button Row -->
+            <div class="row mt-4">
+                <div class="col-12 text-center">
+                    <button id="showQuizBtn" class="btn-outline-custom" style="cursor: pointer;">Start Customizing Your
+                        Program</button>
+
+                    <!-- Quiz Container (Hidden initially) -->
+                    <div id="quizContainer" class="quiz-container mt-5" style="display: none;">
+                        <!-- Initial Quiz View -->
+                        <div id="quizIntro" class="quiz-card p-5 text-center mx-auto">
+                            <!-- Illustration/Icon -->
+                            <img src="gallery/home-page/11.png" alt="Quiz Illustration"
+                                style="width: 120px; margin-bottom: 25px; border-radius: 50%;">
+                            <h3 class="fw-bold mb-3" style="color: #3b3500; font-size: 2rem;">Find Your Perfect Program
+                            </h3>
+                            <p class="mb-4" style="color: #5f5863; font-size: 1.1rem;">Take our 30-second quiz to
+                                discover your ideal Experiential Pathways trips!</p>
+                            <button id="startQuizBtn" class="btn-primary-custom"
+                                style="padding: 12px 40px; font-size: 1.1rem; border-radius: 8px;">START QUIZ</button>
+                        </div>
+
+                        <!-- Quiz Question View -->
+                        <div id="quizQuestionBox" class="quiz-card p-4 p-md-5 text-start mx-auto"
+                            style="display: none;">
+                            <h4 class="fw-bold mb-4" id="quizQuestionText" style="color: #3b3500; font-size: 1.5rem;">
+                            </h4>
+                            <div id="quizOptionsContainer" class="quiz-options d-flex flex-column gap-3 mb-4">
+                                <!-- Options will be generated dynamically by JS -->
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center mt-4 pt-3 border-top">
+                                <button id="quizBackBtn"
+                                    class="btn btn-link text-muted text-decoration-none px-0 fs-5">← Back</button>
+                                <button id="quizNextBtn" class="btn-primary-custom opacity-50"
+                                    style="padding: 10px 35px; border-radius: 8px; pointer-events: none;"
+                                    disabled>Next</button>
+                            </div>
+                        </div>
+
+                        <!-- Quiz Completion View -->
+                        <div id="quizCompletionBox" class="quiz-card p-5 text-center mx-auto" style="display: none;">
+                            <h3 class="fw-bold mb-3" style="color: #3b3500; font-size: 2rem;">Quiz Completed!</h3>
+                            <p class="mb-4" style="color: #5f5863; font-size: 1.1rem;">Thank you for sharing your
+                                preferences with us. We have some amazing recommendations for your school trip!</p>
+                            <a href="contact.html" class="btn-primary-custom"
+                                style="padding: 12px 40px; font-size: 1.1rem; border-radius: 8px;">GET IN TOUCH</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <div id="faq-placeholder"></div>
+    <div id="footer-placeholder"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+
+    <!-- Quiz Logic -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const quizData = [
+                {
+                    question: "What is your primary goal for this school trip?",
+                    options: [
+                        { text: "Service Learning & Community Impact", value: "Service" },
+                        { text: "Cultural Immersion & History", value: "Culture" },
+                        { text: "Outdoor Adventure & Nature", value: "Nature" },
+                        { text: "Language Intensive Practice", value: "Language" }
+                    ]
+                },
+                {
+                    question: "What age group are your students?",
+                    options: [
+                        { text: "Middle School (11-14)", value: "Middle" },
+                        { text: "High School (14-18)", value: "High" },
+                        { text: "College / University", value: "College" }
+                    ]
+                },
+                {
+                    question: "When are you planning to travel?",
+                    options: [
+                        { text: "Spring Break", value: "Spring" },
+                        { text: "Summer", value: "Summer" },
+                        { text: "Fall / Winter", value: "Fall" }
+                    ]
+                }
+            ];
+
+            let currentQuestionIndex = 0;
+            let userAnswers = {};
+
+            const showQuizBtn = document.getElementById('showQuizBtn');
+            const quizContainer = document.getElementById('quizContainer');
+
+            const quizIntro = document.getElementById('quizIntro');
+            const quizQuestionBox = document.getElementById('quizQuestionBox');
+            const quizCompletionBox = document.getElementById('quizCompletionBox');
+
+            const startQuizBtn = document.getElementById('startQuizBtn');
+            const quizBackBtn = document.getElementById('quizBackBtn');
+            const quizNextBtn = document.getElementById('quizNextBtn');
+
+            const quizQuestionText = document.getElementById('quizQuestionText');
+            const quizOptionsContainer = document.getElementById('quizOptionsContainer');
+
+            // 1. Toggle Quiz Container visibility
+            showQuizBtn.addEventListener('click', () => {
+                if (quizContainer.style.display === 'none' || quizContainer.style.display === '') {
+                    quizContainer.style.display = 'block';
+                    // Smooth scroll to quiz
+                    quizContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                } else {
+                    quizContainer.style.display = 'none';
+                }
+            });
+
+            // 2. Start Quiz
+            startQuizBtn.addEventListener('click', () => {
+                quizIntro.style.display = 'none';
+                quizQuestionBox.style.display = 'block';
+                currentQuestionIndex = 0;
+                renderQuestion();
+            });
+
+            // 3. Back Button logic
+            quizBackBtn.addEventListener('click', () => {
+                if (currentQuestionIndex > 0) {
+                    currentQuestionIndex--;
+                    renderQuestion();
+                } else {
+                    quizQuestionBox.style.display = 'none';
+                    quizIntro.style.display = 'block';
+                }
+            });
+
+            // 4. Render current question
+            function renderQuestion() {
+                const currentData = quizData[currentQuestionIndex];
+                quizQuestionText.textContent = currentData.question;
+
+                // Clear current options
+                quizOptionsContainer.innerHTML = '';
+
+                // Reset NEXT button
+                quizNextBtn.disabled = true;
+                quizNextBtn.classList.add('opacity-50');
+                quizNextBtn.style.pointerEvents = 'none';
+
+                // Change NEXT to SUBMIT on the final question
+                if (currentQuestionIndex === quizData.length - 1) {
+                    quizNextBtn.textContent = 'Submit';
+                } else {
+                    quizNextBtn.textContent = 'Next';
+                }
+
+                // Generate new option elements
+                currentData.options.forEach((opt) => {
+                    const label = document.createElement('label');
+                    label.className = 'quiz-option-label';
+
+                    const input = document.createElement('input');
+                    input.type = 'radio';
+                    input.name = 'quizOption';
+                    input.value = opt.value;
+
+                    // If user previously selected this in this session, re-select
+                    if (userAnswers[currentQuestionIndex] === opt.value) {
+                        input.checked = true;
+                        label.classList.add('selected');
+                        // Re-enable NEXT button since there's an active selection
+                        quizNextBtn.disabled = false;
+                        quizNextBtn.classList.remove('opacity-50');
+                        quizNextBtn.style.pointerEvents = 'auto';
+                    }
+
+                    const span = document.createElement('span');
+                    span.className = 'quiz-option-text';
+                    span.textContent = opt.text;
+
+                    // Attach change listener to handle clicks
+                    input.addEventListener('change', (e) => {
+                        // Remove selected class from all labels
+                        document.querySelectorAll('.quiz-option-label').forEach(l => l.classList.remove('selected'));
+
+                        if (e.target.checked) {
+                            label.classList.add('selected');
+                            // Enable the Next button
+                            quizNextBtn.disabled = false;
+                            quizNextBtn.classList.remove('opacity-50');
+                            quizNextBtn.style.pointerEvents = 'auto';
+                        }
+                    });
+
+                    label.appendChild(input);
+                    label.appendChild(span);
+                    quizOptionsContainer.appendChild(label);
+                });
+            }
+
+            // 5. Next Button handling
+            quizNextBtn.addEventListener('click', () => {
+                const selectedOption = document.querySelector('input[name="quizOption"]:checked');
+                if (selectedOption) {
+                    // Save user answer
+                    userAnswers[currentQuestionIndex] = selectedOption.value;
+
+                    if (currentQuestionIndex < quizData.length - 1) {
+                        // Advance to next question
+                        currentQuestionIndex++;
+                        renderQuestion();
+                    } else {
+                        // Quiz is finished! Show Completion text.
+                        quizQuestionBox.style.display = 'none';
+                        quizCompletionBox.style.display = 'block';
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

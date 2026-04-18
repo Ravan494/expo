@@ -1,0 +1,106 @@
+/* Gradient Box */
+.custom-gradient-box {
+    background: linear-gradient(to left bottom, #fffef0 0%, #fffdf5 60%, rgba(240, 248, 255, 0.4) 100%);
+}
+
+/* Heading */
+.main-heading {
+    font-family: "Times New Roman", Georgia, serif;
+    font-style: italic;
+    font-weight: bold;
+    line-height: 1.1;
+    font-size: 32px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 10px;
+}
+
+.gallery-grid img {
+    width: 100%;
+}
+
+/* Responsive Heading */
+@media (min-width: 992px) {
+    .main-heading {
+        font-size: 60px;
+    }
+}
+
+/* Text */
+.text-content {
+    color: #3a3300;
+    font-family: Arial, sans-serif;
+}
+
+/* Image Position */
+.custom-img-box {
+    margin-top: 20px;
+}
+
+@media (min-width: 992px) {
+    .custom-img-box {
+        position: absolute;
+        right: 0;
+        top: -60px;
+        bottom: -60px;
+        width: 35%;
+    }
+
+    .custom-gradient-box {
+        width: 75%;
+        padding-right: 30%;
+    }
+}
+
+/* Cards */
+.custom-card {
+    background: linear-gradient(to left bottom, rgb(234, 228, 204) 0%, rgb(248, 245, 233) 100%);
+    border-radius: 4px;
+}
+
+.custom-card p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #3a3300;
+    font-family: Arial, sans-serif;
+}
+
+
+/* Card Title */
+.card-title {
+    font-family: Georgia, serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 24px;
+    margin-bottom: 24px;
+    line-height: 2rem;
+    color: #3a3300;
+}
+
+.itinerary-hero {
+    height: 70vh;
+    width: 100%;
+    position: relative;
+}
+
+.itinerary-box p {
+    line-height: 30px;
+    margin-bottom: 30px;
+}
+
+@media (max-width: 768px) {
+    .card-title {
+        font-size: 22px;
+    }
+
+    .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(1, 1fr);
+        grid-gap: 10px;
+    }
+}
