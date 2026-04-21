@@ -204,3 +204,33 @@
     cursor: not-allowed;
     pointer-events: none;
 }
+
+/* User Details Form Styling */
+.quiz-input {
+    border: 2px solid #e0dfd5;
+    border-radius: 12px;
+    padding: 12px 15px;
+    font-size: 1.1rem;
+    color: #3b3500;
+    transition: all 0.3s ease;
+}
+
+.quiz-input:focus {
+    border-color: #3b3500;
+    box-shadow: 0 0 0 4px rgba(59, 53, 0, 0.1);
+    outline: none;
+}
+
+.quiz-input::placeholder {
+    color: #b0af9f;
+}
+
+.success-icon {
+    animation: scaleUp 0.5s ease-out forwards;
+}
+
+@keyframes scaleUp {
+    0% { transform: scale(0); opacity: 0; }
+    70% { transform: scale(1.1); opacity: 1; }
+    100% { transform: scale(1); opacity: 1; }
+}

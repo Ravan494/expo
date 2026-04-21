@@ -50,7 +50,7 @@
 
 .cross-content {
     display: flex;
-    width: 55%;
+    width: 45%;
     flex-direction: column;
     justify-content: center;
     align-items: start;
@@ -70,6 +70,14 @@
 
 .cross-img {
     width: 50%;
+    display: flex;
+    justify-content: center;
+}
+.cross-img img {
+    width: 80%;
+    height: auto;
+    margin: auto;
+    border-radius: 8px;
 }
 
 .cross .section-title {

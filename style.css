@@ -28,6 +28,9 @@ a {
   z-index: 1000;
   background-color: transparent;
 }
+.navbar a,.navbar button{
+  font-family: poppins, sans-serif;
+}
 
 .nav-wrap {
   display: flex;
@@ -73,6 +76,7 @@ a {
   display: block;
   color: black;
   padding: 8px 12px;
+  font-family: poppins, sans-serif;
   white-space: nowrap;
 }
 

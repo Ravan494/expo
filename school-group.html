@@ -116,13 +116,58 @@
                             </div>
                         </div>
 
+                        <!-- Quiz User Details View -->
+                        <div id="quizUserDetailsBox" class="quiz-card p-4 p-md-5 text-start mx-auto"
+                            style="display: none;">
+                            <h3 class="fw-bold mb-3" style="color: #3b3500; font-size: 1.8rem;">One Last Step!</h3>
+                            <p class="mb-4" style="color: #5f5863;">Please share your details so we can send you the
+                                best program recommendations.</p>
+
+                            <form id="quizUserDetailsForm">
+                                <div class="mb-3">
+                                    <label for="fullName" class="form-label text-uppercase fw-bold small">Full
+                                        Name</label>
+                                    <input type="text" class="form-control quiz-input" id="fullName" required
+                                        placeholder="John Doe">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="email" class="form-label text-uppercase fw-bold small">Email
+                                        Address</label>
+                                    <input type="email" class="form-control quiz-input" id="email" required
+                                        placeholder="john@example.com">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="school" class="form-label text-uppercase fw-bold small">School /
+                                        Organization</label>
+                                    <input type="text" class="form-control quiz-input" id="school" required
+                                        placeholder="Highland High School">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="phone" class="form-label text-uppercase fw-bold small">Phone
+                                        Number</label>
+                                    <input type="tel" class="form-control quiz-input" id="phone"
+                                        placeholder="+1 (555) 000-0000">
+                                </div>
+
+                                <div class="d-flex justify-content-between align-items-center mt-4 pt-3 border-top">
+                                    <button type="button" id="formBackBtn"
+                                        class="btn btn-link text-muted text-decoration-none px-0 fs-5">← Back</button>
+                                    <button type="submit" id="finalSubmitBtn" class="btn-primary-custom"
+                                        style="padding: 10px 35px; border-radius: 8px;">Submit Details</button>
+                                </div>
+                            </form>
+                        </div>
+
                         <!-- Quiz Completion View -->
                         <div id="quizCompletionBox" class="quiz-card p-5 text-center mx-auto" style="display: none;">
-                            <h3 class="fw-bold mb-3" style="color: #3b3500; font-size: 2rem;">Quiz Completed!</h3>
-                            <p class="mb-4" style="color: #5f5863; font-size: 1.1rem;">Thank you for sharing your
-                                preferences with us. We have some amazing recommendations for your school trip!</p>
-                            <a href="contact.html" class="btn-primary-custom"
-                                style="padding: 12px 40px; font-size: 1.1rem; border-radius: 8px;">GET IN TOUCH</a>
+                            <div class="success-icon mb-4">
+                                <i class="bi bi-check-circle-fill" style="font-size: 4rem; color: #3b3500;"></i>
+                            </div>
+                            <h3 class="fw-bold mb-3" style="color: #3b3500; font-size: 2rem;">Details Submitted!</h3>
+                            <p class="mb-4" style="color: #5f5863; font-size: 1.1rem;">Thank you! We've received your
+                                information and our team will get back to you shortly with customized trip ideas.</p>
+                            <a href="index.html" class="btn-primary-custom"
+                                style="padding: 12px 40px; font-size: 1.1rem; border-radius: 8px;">RETURN HOME</a>
                         </div>
                     </div>
                 </div>
@@ -142,8 +187,12 @@
     <!-- Quiz Logic -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // REPLACE THIS WITH YOUR GOOGLE APPS SCRIPT WEB APP URL
+            const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw4S5yXbHl1kMM1qxMzPKygriXzxvWHWamqEbEXIrHAxQCjI88WppBixOnXdyp9clDs/exec';
+
             const quizData = [
                 {
+                    id: "goal",
                     question: "What is your primary goal for this school trip?",
                     options: [
                         { text: "Service Learning & Community Impact", value: "Service" },
@@ -153,6 +202,7 @@
                     ]
                 },
                 {
+                    id: "age",
                     question: "What age group are your students?",
                     options: [
                         { text: "Middle School (11-14)", value: "Middle" },
@@ -161,6 +211,7 @@
                     ]
                 },
                 {
+                    id: "timing",
                     question: "When are you planning to travel?",
                     options: [
                         { text: "Spring Break", value: "Spring" },
@@ -178,11 +229,16 @@
 
             const quizIntro = document.getElementById('quizIntro');
             const quizQuestionBox = document.getElementById('quizQuestionBox');
+            const quizUserDetailsBox = document.getElementById('quizUserDetailsBox');
             const quizCompletionBox = document.getElementById('quizCompletionBox');
 
             const startQuizBtn = document.getElementById('startQuizBtn');
             const quizBackBtn = document.getElementById('quizBackBtn');
             const quizNextBtn = document.getElementById('quizNextBtn');
+            const formBackBtn = document.getElementById('formBackBtn');
+
+            const quizUserDetailsForm = document.getElementById('quizUserDetailsForm');
+            const finalSubmitBtn = document.getElementById('finalSubmitBtn');
 
             const quizQuestionText = document.getElementById('quizQuestionText');
             const quizOptionsContainer = document.getElementById('quizOptionsContainer');
@@ -191,7 +247,6 @@
             showQuizBtn.addEventListener('click', () => {
                 if (quizContainer.style.display === 'none' || quizContainer.style.display === '') {
                     quizContainer.style.display = 'block';
-                    // Smooth scroll to quiz
                     quizContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 } else {
                     quizContainer.style.display = 'none';
@@ -217,27 +272,29 @@
                 }
             });
 
+            formBackBtn.addEventListener('click', () => {
+                quizUserDetailsBox.style.display = 'none';
+                quizQuestionBox.style.display = 'block';
+                currentQuestionIndex = quizData.length - 1;
+                renderQuestion();
+            });
+
             // 4. Render current question
             function renderQuestion() {
                 const currentData = quizData[currentQuestionIndex];
                 quizQuestionText.textContent = currentData.question;
 
-                // Clear current options
                 quizOptionsContainer.innerHTML = '';
-
-                // Reset NEXT button
                 quizNextBtn.disabled = true;
                 quizNextBtn.classList.add('opacity-50');
                 quizNextBtn.style.pointerEvents = 'none';
 
-                // Change NEXT to SUBMIT on the final question
                 if (currentQuestionIndex === quizData.length - 1) {
-                    quizNextBtn.textContent = 'Submit';
+                    quizNextBtn.textContent = 'Next';
                 } else {
                     quizNextBtn.textContent = 'Next';
                 }
 
-                // Generate new option elements
                 currentData.options.forEach((opt) => {
                     const label = document.createElement('label');
                     label.className = 'quiz-option-label';
@@ -247,11 +304,9 @@
                     input.name = 'quizOption';
                     input.value = opt.value;
 
-                    // If user previously selected this in this session, re-select
-                    if (userAnswers[currentQuestionIndex] === opt.value) {
+                    if (userAnswers[currentData.id] === opt.value) {
                         input.checked = true;
                         label.classList.add('selected');
-                        // Re-enable NEXT button since there's an active selection
                         quizNextBtn.disabled = false;
                         quizNextBtn.classList.remove('opacity-50');
                         quizNextBtn.style.pointerEvents = 'auto';
@@ -261,14 +316,10 @@
                     span.className = 'quiz-option-text';
                     span.textContent = opt.text;
 
-                    // Attach change listener to handle clicks
                     input.addEventListener('change', (e) => {
-                        // Remove selected class from all labels
                         document.querySelectorAll('.quiz-option-label').forEach(l => l.classList.remove('selected'));
-
                         if (e.target.checked) {
                             label.classList.add('selected');
-                            // Enable the Next button
                             quizNextBtn.disabled = false;
                             quizNextBtn.classList.remove('opacity-50');
                             quizNextBtn.style.pointerEvents = 'auto';
@@ -285,22 +336,75 @@
             quizNextBtn.addEventListener('click', () => {
                 const selectedOption = document.querySelector('input[name="quizOption"]:checked');
                 if (selectedOption) {
-                    // Save user answer
-                    userAnswers[currentQuestionIndex] = selectedOption.value;
+                    const currentData = quizData[currentQuestionIndex];
+                    userAnswers[currentData.id] = selectedOption.value;
 
                     if (currentQuestionIndex < quizData.length - 1) {
-                        // Advance to next question
                         currentQuestionIndex++;
                         renderQuestion();
                     } else {
-                        // Quiz is finished! Show Completion text.
+                        // Move to user details
                         quizQuestionBox.style.display = 'none';
-                        quizCompletionBox.style.display = 'block';
+                        quizUserDetailsBox.style.display = 'block';
                     }
+                }
+            });
+
+            // 6. Final Submit handling
+            quizUserDetailsForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+
+                const formData = {
+                    fullName: document.getElementById('fullName').value,
+                    email: document.getElementById('email').value,
+                    school: document.getElementById('school').value,
+                    phone: document.getElementById('phone').value,
+                    // Map values to text for better readability in sheet
+                    goal: quizData[0].options.find(o => o.value === userAnswers.goal)?.text || "",
+                    age: quizData[1].options.find(o => o.value === userAnswers.age)?.text || "",
+                    timing: quizData[2].options.find(o => o.value === userAnswers.timing)?.text || ""
+                };
+
+                // Visual feedback for submitting
+                finalSubmitBtn.disabled = true;
+                finalSubmitBtn.textContent = 'Submitting...';
+                finalSubmitBtn.style.opacity = '0.7';
+
+                try {
+                    // Send to Google Sheets if URL is provided
+                    if (GOOGLE_SCRIPT_URL !== 'YOUR_GOOGLE_SCRIPT_WEB_APP_URL') {
+                        // Use URLSearchParams for robust 'no-cors' submission
+                        const params = new URLSearchParams();
+                        for (const key in formData) {
+                            params.append(key, formData[key]);
+                        }
+                        params.append('sheetName', 'Sheet1');
+
+                        await fetch(GOOGLE_SCRIPT_URL, {
+                            method: 'POST',
+                            mode: 'no-cors', // Essential for Google Apps Script
+                            cache: 'no-cache',
+                            body: params // This sends as application/x-www-form-urlencoded
+                        });
+                    } else {
+                        console.warn("Google Script URL not configured. Data not sent.");
+                    }
+
+                    // Success!
+                    quizUserDetailsBox.style.display = 'none';
+                    quizCompletionBox.style.display = 'block';
+
+                } catch (error) {
+                    console.error("Submission error:", error);
+                    alert("There was an error submitting your details. Please try again or contact us directly.");
+                    finalSubmitBtn.disabled = false;
+                    finalSubmitBtn.textContent = 'Submit Details';
+                    finalSubmitBtn.style.opacity = '1';
                 }
             });
         });
     </script>
+
 </body>
 
 </html>
