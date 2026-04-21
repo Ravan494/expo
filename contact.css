@@ -33,7 +33,7 @@
     align-items: center;
     flex-wrap: wrap;
     gap: 20px;
-    padding-bottom: 50px;
+    padding-bottom: 150px;
 }
 .contact-card
 {
@@ -94,7 +94,22 @@
     background: linear-gradient(to right,#fffbe6,white);
     padding: 5px 10px;
 }
-
+@media (max-width:1680px) {
+   
+    .contact-cards
+    {
+        
+        padding-bottom: 70px;
+    }
+}
+@media (max-width:1280px) {
+   
+    .contact-cards
+    {
+        
+        padding-bottom: 20px;
+    }
+}
 
 
 @media (max-width:786px) {

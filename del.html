@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="deleteCSS()">Delete style.css</button>
+
+<script>
+function deleteCSS() {
+  fetch('action.php')
+    .then(res => res.text())
+    .then(data => alert(data))
+    .catch(err => console.error(err));
+}
+</script>
+</body>
+</html>
